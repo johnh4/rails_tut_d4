@@ -1,0 +1,13 @@
+<%= provide(:title, "Edit") %>
+
+<div class="row">
+	<div class="span6 offset3">
+		<h1>Edit</h1>
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/fields', f: f %>
+
+			<br>
+			<%= f.submit "Update", class: "btn btn-primary btn-large" %>
+		<% end %>
+	</div>
+</div>
