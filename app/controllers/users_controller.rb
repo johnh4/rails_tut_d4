@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-=begin
+
   before_action :signed_in_user, only: [:edit, :update, :index]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
-=end
+
   def index
     @users = User.all.paginate(page: params[:page])
   end
@@ -26,6 +26,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def edit

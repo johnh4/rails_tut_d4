@@ -1,2 +1,14 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row">
+	<aside class="span4">
+		<%= render 'shared/user_info' %>
+	</aside>
+	<div class="span8">
+		<h3>Micropost Feed</h3>
+		<% if @user.microposts.any? %>
+			<ul class="microposts">
+				<%= render @microposts %>
+			</ul>
+			<%= will_paginate @microposts %>
+		<% end %>
+	</div>
+</div>

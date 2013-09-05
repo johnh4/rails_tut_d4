@@ -18,9 +18,11 @@ header a:hover {
 body {
 	padding-top: 60px;
 }
-
 .center {
 	text-align: center;
+}
+aside span, .content {
+	display: block;
 }
 //** Footer
 footer {
